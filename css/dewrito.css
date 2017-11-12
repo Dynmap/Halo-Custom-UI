@@ -1,0 +1,725 @@
+
+div[data-menu-position="top"] {top: -720px;}
+div[data-menu-position="bottom"] {top: 720px;}
+div[data-menu-position="left"] {left: -720px;}
+div[data-menu-position="right"] {left: 720px;}
+div[data-menu-position="center"] {left: 0px; top: 0px;}
+
+#alert-container, #click-menu-container {
+    display: none;
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.chat-tab > .x {
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: url('../img/x.svg') no-repeat 0px 0px/8px 8px;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 10;
+}
+.chat-tab > .x:hover {
+    opacity: 1;
+}
+
+#chatbox {
+    display: none;
+    width: 450px;
+    height: 250px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+}
+
+#chat-tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 420px;
+    height: 30px;
+    overflow: hidden;
+}
+
+#chat-pin {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/pin.svg);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+}
+
+#chat-input {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 390px;
+    height: 30px;
+    overflow: hidden;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+#chat-enter {
+    position: absolute;
+    top: 220px;
+    right: 0;
+    height: 30px;
+    width: 60px;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.chat-message {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+}
+.chat-message.self {
+    color: rgba(255,255,255,0.667);
+}
+
+.chat-message.alert {
+    color: rgba(255,0,0,0.9);
+}
+
+.chat-message > .balloon {
+    background-image: url(../img/party.svg);
+    background-size: 100%;
+    background-repeat: none;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    opacity: 0.9;
+    display: inline-block;
+}
+
+#chat-pin.pinned,
+#chat-pin:hover,
+#chat-enter:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.chat-tab {
+    display: inline-block;
+    height: 30px;
+    color: rgba(255,255,255,0.75);
+    padding: 5px 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+}
+
+.chat-tab.selected, .chat-tab:hover {
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+#chat-windows {
+    position: absolute;
+    height: 190px;
+    width: 450px;
+    top: 30px;
+    left: 0;
+}
+
+.chat-window {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    overflow-y: scroll;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.chat-window.selected {
+    display: block;
+}
+
+.chat-window span {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+#alert {
+    position: absolute;
+    left: 390px;
+    top: -300px;
+    width: 500px;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-sizing: border-box;
+    padding: 16px;
+    font-family: "TV Nord";
+}
+
+#alert-title {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 0 24px 0;
+    padding: 0;
+    text-align: left;
+}
+
+#alert-content {
+    font-size: 16px;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#alert-actions {
+    text-align: right;
+}
+
+#alert-yes,
+#alert-no {
+    display: inline-block;
+    font-size: 16px;
+    color: #ddd;
+    margin: 24px 8px 0px 8px;
+}
+
+#alert-yes:hover,
+#alert-no:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#alert a {
+    color: #32aacd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#alert a:hover {
+    color: #55ccee;
+}
+
+#dewrito.credits {
+    top: -30px;
+    left: 265px;
+    -webkit-transition-timing-function: 200ms;
+    -webkit-transition-delay: 0ms;
+}
+#dewrito.main {
+    left: -10px;
+    top: 240px;
+}
+#dewrito.options {
+    opacity: 0.9;
+    top: 400px;
+    left: -10px;
+    -webkit-transition-timing-function: 200ms;
+    -webkit-transition-delay: 200ms;
+}
+#dewrito.hidden {
+    opacity: 0;
+    left: -10px;
+    top: 240px;
+}
+
+.options-section.show {
+    display: block;
+}
+
+.sprint {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#click-menu {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+    width: 125px;
+    background-color: #000;
+    border-radius: 4px;
+    z-index: 9999;
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#click-menu li {
+    height: 30px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: "TV Nord";
+    font-size: 14px;
+    text-align: left;
+    margin: 0;
+    padding: 7px;
+}
+
+#back-options {
+    left: 20px;
+    bottom: 20px;
+    font-size: 18px;
+    opacity: 0.75;
+    z-index: 99999999;
+}
+
+#friendslist {
+    position: absolute;
+    top: 0px;
+    right: -250px;
+    z-index: 10;
+    width: 250px;
+    height: 720px;
+    background: rgba(0,0,0,0.8);
+}
+.list-half {
+    position: relative;
+    height: 360px;
+    width: 250px;
+    box-sizing: border-box;
+}
+#friends, #party {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 235px;
+    height: 250px;
+    overflow-y: scroll;
+}
+#friends-close {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: url('../img/x.svg') no-repeat 0px 0px/14px 14px;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 10;
+}
+#friends-close:hover {
+    opacity: 1;
+}
+.nofriends {
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+}
+.friends-title {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 25px 25px 50px 25px;
+}
+.friend {
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    margin: 5px 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+.friend:hover, #click-menu li:hover {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(50,50,50,0.9);
+    cursor: pointer;
+}
+.friend.online:after {
+    content: " ";
+    background: rgba(0,255,55,0.66);
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    float: right;
+    margin: 5px;
+}
+.friend.offline:after {
+    content: " ";
+    background: rgba(255,0,55,0.66);
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    float: right;
+    margin: 5px;
+}
+#party .friend:first-of-type:after {
+    content: " ";
+    background-image: url(../img/party.svg);
+    background-size: 100%;
+    background-repeat: none;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin: 0;
+    opacity: 0.9;
+}
+
+#party .friend:first-of-type:hover:after {
+    opacity: 1;
+}
+#addfriend {
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    width: 220px;
+}
+#friend-input {
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(255,255,255,0.9);
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    border: 0;
+    outline: 0;
+    margin: 0;
+    width: 80%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+#friend-add, #friend-remove {
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 0 5px;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    width: calc(20% - 5px);
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#friend-add {
+    background: rgba(0,160,25,0.9);
+}
+#friend-remove {
+    background: rgba(160,0,25,0.9);
+}
+#friend-add:hover {
+    background: rgba(0,255,55,0.9);
+}
+#friend-remove:hover {
+    background: rgba(255,0,55,0.9);
+}
+.regular .elversion {
+    font-size: 15px;
+}
+.condensed .elversion {
+    font-size: 14px;
+}
+.list .elversion {
+    font-size: 15px;
+}
+.elversion {
+    vertical-align: middle;
+    padding-left: 10px;
+}
+#loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#loadingMapImage {
+    z-index: 20;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url('../img/loading/maps/diamondback.jpg') 50% 50% / contain no-repeat;
+}
+#loadingBars {
+    z-index: 22;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url('../img/loading/bars.png') 50% 50% / contain no-repeat;
+}
+#hoImage {
+    z-index: 22;
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    width: 20%;
+    height: 20%;
+    background: url('../img/loading/ho.png') 50% 50% / contain no-repeat;
+}
+#edImage {
+    z-index: 22;
+    position: absolute;
+    top: 635px;
+    left: 0px;
+    width: 10%;
+    height: 10%;
+    background: url('../img/loading/ed.png') 50% 50% / contain no-repeat;
+}
+#loadingGametypeImage {
+    z-index: 22;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    background: url('../img/gametypes/Slayer.png') 0 0 / cover no-repeat;
+}
+#loadingMapName {
+    z-index: 22;
+    position: absolute;
+    bottom: 35px;
+    left: 8%;
+    font-family: "Conduit ITC";
+    font-weight: 300;
+    font-size: 30px;
+    color: #fff;
+}
+#mapOverlay {
+    z-index: 22;
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    width: 55%;
+    height: 60%;
+    background: url('../img/loading/maps/db-overlay.png') 50% 50% / contain no-repeat;
+}
+#popup {
+    position: fixed;
+    z-index: 3000;
+    top: 20px;
+    right: 20px;
+    max-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #fff;
+    display: none;
+    background: rgba(0, 0, 0, 0.66);
+    border-radius: 8px;
+}
+html {
+    background: #000;
+}
+@-webkit-keyframes rotatingcw {
+    from {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(-360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotatingcw {
+    from {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotating {
+    from {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}
+#version {
+    right: 5px;
+    bottom: 5px;
+    font-size: 14px;
+    opacity: 0.5;
+    font-family: "Conduit ITC";
+    font-weight: 300;
+}
+#back,
+#back-options,
+#version,
+#dewmenu-button,
+#browser-settings {
+    position: absolute;
+    cursor: pointer;
+    z-index: 4;
+    color: #fff;
+}
+#browser.list .flag {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 30px;
+    max-height: 20px;
+}
+#browser.regular .name {
+    position: relative;
+    padding-top: 12px;
+}
+#browser.regular .flag {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 30px;
+    max-height: 23px;
+}
+#browser.condensed .name {
+    position: relative;
+    padding-top: 6px;
+}
+#browser.condensed .flag {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 30px;
+    max-height: 18px;
+}
+.server.passworded {
+    position: relative;
+}
+.regular .server.passworded .thumb:before {
+    content: " ";
+    display: block;
+    background: rgba(0, 0, 0, 0.59) url(../img/passworded.png) no-repeat 50% 50%;
+    width: 210px;
+    height: 79px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 11px;
+    left: 15px;
+    background-size: 15%;
+}
+.condensed .server.passworded .thumb:before {
+    content: " ";
+    display: block;
+    background: rgba(0, 0, 0, 0.59) url(../img/passworded.png) no-repeat 50% 50%;
+    width: 210px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 6px;
+    left: 15px;
+    background-size: 15%;
+}
+.list .server.passworded .thumb:before {
+    content: " ";
+    display: block;
+    background: rgba(0, 0, 0, 0.59) url(../img/passworded.png) no-repeat 50% 50%;
+    width: 71px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 3px;
+    left: 15px;
+    background-size: 15%;
+}
+.cf:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.cf {
+    display: inline-block;
+}
+/* start commented backslash hack \*/
+
+* html .cf {
+    height: 1%;
+}
+.cf {
+    display: block;
+}
+/* close commented backslash hack */
